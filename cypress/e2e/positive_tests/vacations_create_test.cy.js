@@ -24,15 +24,13 @@ describe('template spec', () => {
             cy.wait(2000)
 
             cy.log('Ввод данных')
-            cy.get('.vacancy-add-form-wrapper > .form > :nth-child(1) > .form__labels > .labels > :nth-child(1) > .form-control--responsive > .form-input--').type(data.vacation_name)
+            cy.get('.vacancy-add-form-wrapper > .form > :nth-child(1) > .form__labels > .labels > :nth-child(1) > .form-control--responsive > .form-input--').type(data.vacation_name,{force:true})
 
-            cy.get('.desktop-modal__content > .vacancy-need-wrapper > .form > :nth-child(1)' +
-                ' > .form__labels > .labels > :nth-child(3) > .form-control > .form-area').type(data.vacation_needs)
+            cy.get('.vacancy-add-form-wrapper > .form > :nth-child(1) > .form__labels > .labels > :nth-child(5) > .form-control > .form-area').type(data.vacation_needs,{force:true})
 
-            cy.get('.desktop-modal__content > .vacancy-need-wrapper > .form > :nth-child(1)' +
-                ' > .form__labels > .labels > :nth-child(4) > .form-control > .form-area').type(data.vacation_que)
+            cy.get('.vacancy-add-form-wrapper > .form > :nth-child(1) > .form__labels > .labels > :nth-child(6) > .form-control > .form-area').type(data.vacation_que,{force:true})
             cy.log('Создание вакансии')
-            cy.get('.vacancy-add-form-wrapper > .form > .form__buttons > .buttons').click()
+            cy.get('.vacancy-add-form-wrapper > .form > .form__buttons > .buttons > .button').click()
         })
     })
 })
