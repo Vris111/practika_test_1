@@ -2,8 +2,11 @@ describe('template spec', () => {
     it('Need create', () => {
         cy.fixture('cypressCreatesTest').then(data =>{
             cy.visit('https://dev.profteam.su/login')
+
             cy.log('Ввод существующего логина')
             cy.get('.form-input--text').type(data.login_Employer)
+
+            cy.log('Ввод пароля')
             cy.get('.form-input--password').type(data.password_Employer)
             cy.log('Клик по кнопке')
             cy.get(':nth-child(3) > .button').click()
