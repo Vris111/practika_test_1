@@ -1,8 +1,8 @@
 describe('template spec', () => {
     it('Needs search', () => {
         cy.fixture('cypressTest').then(data =>{
+            cy.viewport(1200, 750)
             cy.visit('https://dev.profteam.su/login')
-
             cy.log('Ввод существующего логина')
             cy.get('.form-input--text').type(data.login)
 
@@ -11,6 +11,8 @@ describe('template spec', () => {
 
             cy.log('Клик по кнопке')
             cy.get('.form__buttons > :nth-child(3)').click()
+
+            cy.wait(2000)
 
             cy.log('Клик по кнопке для перехода на потребности')
             cy.get(':nth-child(1) > .header__nav > [href="/needs"]').click()
@@ -24,6 +26,7 @@ describe('template spec', () => {
 
             cy.log('Клик по иконке поиска')
             cy.get('.button > .base-icon > svg').click()
+            cy.wait(200)
         })
     })
 })

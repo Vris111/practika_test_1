@@ -2,7 +2,7 @@ describe('template spec', () => {
     it('Need create', () => {
         cy.fixture('cypressCreatesTest').then(data =>{
             cy.visit('https://dev.profteam.su/login')
-
+            cy.viewport(1200, 750)
             cy.log('Ввод существующего логина')
             cy.get('.form-input--text').type(data.login_Employer)
 

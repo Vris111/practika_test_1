@@ -1,6 +1,7 @@
 describe('template spec', () => {
     it('Add student role', () => {
         cy.fixture('cypressTest').then(data =>{
+            cy.viewport(1200, 750)
             cy.visit('https://dev.profteam.su/login')
 
             cy.log('Ввод существующего логина')

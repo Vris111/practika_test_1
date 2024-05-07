@@ -22,6 +22,8 @@ describe('template spec', () => {
             cy.log('Клик на кнопку для отклика на потребность')
             cy.get(':nth-child(5) > .need-item__info-wrapper > .need-item__footer-wrapper > .need-footer >' +
                 ' .need-footer__button-wrapper > .button__background-color-green').click()
+
+            cy.wait(200)
         })
     })
 })
